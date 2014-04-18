@@ -27,7 +27,7 @@ module ExecSimple
         #stdout.wait_readable
         #cur = stdout.read
         cur = stdout.readpartial(4096)
-        if log.nil? then out << cur else log.info cur end
+        if log.nil? then out << cur else log.info cur.chomp end
       end
     end
     ep = Concurrent::Promise.execute do
@@ -35,7 +35,7 @@ module ExecSimple
         #stdout.wait_readable
         #cur = stdout.read
         cur = stderr.readpartial(4096)
-        if log.nil? then err << cur else log.error cur end
+        if log.nil? then err << cur else log.error cur.chomp end
       end
     end
     # 
