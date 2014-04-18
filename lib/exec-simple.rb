@@ -45,6 +45,7 @@ module ExecSimple
       end
     # get the future's value
     exit_code = future.value(timeout)
+    exitstatus = if exit_code.nil? then nil else exit_code.exitstatus end
     
     # if we didn't yet get a value, kill the process
     if wait_thr.alive?
@@ -64,7 +65,7 @@ module ExecSimple
     stderr.close
 
     # get the results
-    return exit_code if not log.nil?
-    [out, err, exit_code]
+    return exitstatus if not log.nil?
+    [out, err, exitstatus]
   end
 end
