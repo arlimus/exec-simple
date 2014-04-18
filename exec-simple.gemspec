@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dominik.richter@gmail.com"]
   spec.summary       = %q{Simply run commands.}
   spec.description   = %q{A simple command runner interface.}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/arlimus/exec-simple"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
