@@ -28,9 +28,7 @@ log.add_appenders(Logging.appenders.stdout)
 
 ExecSimple.run 'echo "You will read this"; sleep 3; echo "before the end."', log: log
  INFO  main : You will read this
-
  INFO  main : before the end.
-
 => 0
 
 ```
