@@ -3,6 +3,7 @@ require 'open3'
 require 'io/wait'
 
 module ExecSimple
+  VERSION = "0.1.0"
 
   # Run a command. Optionally log results from stadard output and error
   # with a logger object. Optionally set a timeout as a maximum time to
